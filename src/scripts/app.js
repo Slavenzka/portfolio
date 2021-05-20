@@ -8,6 +8,7 @@ const entryPoint = document.querySelector('#root');
 
 const gridComponent = new SiteGrid();
 render(entryPoint, gridComponent);
+
 const contentContainer = document.querySelector('#main');
 
 const router = new Router(contentContainer);

@@ -32,17 +32,21 @@ a {
 }
 
 .preloaderPage {
-  height: 100vh;
+  height: calc(100vh - var(--padding-global-v) - 2rem);
 }
 
 @media (max-width: $adaptiveMax) {
   html {
-    font-size: 12px;
+    font-size: 9px;
+  }
+
+  .content {
+    padding: var(--padding-global-v) 0 2rem 0;
   }
 }
 
 @media (max-width: $mobileMax) {
   html {
-    font-size: 15px;
+    font-size: 8px;
   }
 }

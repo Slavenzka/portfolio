@@ -5,7 +5,7 @@ const createProfileTemplate = ({
   description,
   social,
 }) => {
-  const {email, linkedin, telegram} = social
+  const {email, linkedin, telegram, github} = social
 
   return (
     `<section class="section about">
@@ -26,7 +26,12 @@ const createProfileTemplate = ({
       </div>
       <ul class="about__list">
         <li class="about__item">
-          <a href="tg://resolve?domain=<${telegram}>" class="about__link">
+          <a
+            href="tg://resolve?domain=<${telegram}>"
+            class="about__link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Мои контакты в Telegram
             <svg class="about__icon" width="3rem" viewBox="0 0 24 24">
               <use xlink:href="#icon-telegram"></use>
@@ -34,10 +39,28 @@ const createProfileTemplate = ({
           </a>
         </li>
         <li class="about__item">
-          <a href="${linkedin}" class="about__link">
+          <a
+            href="${linkedin}"
+            class="about__link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Мои контакты в Linkedin
             <svg class="about__icon" width="3rem" height="3rem" viewBox="0 0 512 512">
               <use xlink:href="#icon-linkedin"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="about__item">
+          <a
+            href="${github}"
+            class="about__link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Мои контакты в Github
+            <svg class="about__icon" width="3rem" height="3rem" viewBox="0 0 24 24">
+              <use xlink:href="#icon-github"></use>
             </svg>
           </a>
         </li>

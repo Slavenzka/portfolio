@@ -1,6 +1,7 @@
 $colorLightest: rgb(255, 255, 255);
 $colorLightestOpacity: rgba(255, 255, 255, 0.5);
 $colorMain: rgb(243, 255, 185);
+$colorHighlight: rgb(128, 149, 71);
 $colorDarkest: rgb(0, 34, 34);
 
 $transitionDuration: 0.3s;
@@ -8,7 +9,8 @@ $adaptiveMax: 1260px;
 $mobileMax: 767px;
 
 body {
-  --padding-global-l: 200px;
+  --padding-global-l: 20rem;
+  --padding-global-v: 10rem;
 
   @media (max-width: $adaptiveMax) {
     --padding-global-l: 0;

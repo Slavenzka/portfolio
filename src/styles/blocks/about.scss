@@ -4,8 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 10%;
-  padding-left: calc(var(--padding-global-l) + 15%);
+  padding: 3rem 10% 3rem calc(var(--padding-global-l) + 15%);
   min-height: 100vh;
   color: white;
 
@@ -89,6 +88,8 @@
 
 @media (max-width: $adaptiveMax) {
   .about {
+    justify-content: flex-start;
     padding: 0 var(--padding-h);
+    min-height: calc(100vh - 2rem - var(--padding-global-v));
   }
 }
