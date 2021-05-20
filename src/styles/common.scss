@@ -1,0 +1,48 @@
+@import "./variables";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: $colorDarkest;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15%;
+}
+
+.section {
+  padding-left: var(--padding-global-l);
+}
+
+.content {
+  min-height: 100vh;
+}
+
+.preloaderPage {
+  height: 100vh;
+}
+
+@media (max-width: $adaptiveMax) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: $mobileMax) {
+  html {
+    font-size: 15px;
+  }
+}

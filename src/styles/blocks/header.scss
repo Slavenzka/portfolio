@@ -1,0 +1,122 @@
+@import "../mixins";
+@import "../variables";
+
+.header {
+  position: fixed;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: var(--padding-global-l);
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  &__list {
+    @include resetList;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+  }
+
+  &__link {
+    @include resetButton;
+    @include navigation($colorLightest);
+
+    transition-duration: $transitionDuration;
+    opacity: 0.5;
+    cursor: pointer;
+
+    &:hover {
+      color: $colorMain;
+      opacity: 1;
+    }
+
+    &--active {
+      opacity: 0.9;
+      pointer-events: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+  }
+}
+
+@media (max-width: $adaptiveMax) {
+  .header {
+    align-items: flex-end;
+    padding: 3rem var(--padding-h);
+    width: 100%;
+    min-height: auto;
+    background-color: transparent;
+
+    &__burger {
+      @include resetButton;
+
+      position: absolute;
+      display: inline-block;
+      width: 3rem;
+      height: 2.5rem;
+      font-size: 0;
+      z-index: 1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $colorLightest;
+        box-shadow: 0 1.1rem 0 0 $colorLightest;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $colorLightest;
+      }
+    }
+
+    &__list {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 5rem 2rem;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition-duration: $transitionDuration;
+      transform: translateY(-100%);
+
+      &--active {
+        transform: translateY(0);
+      }
+    }
+
+    &__item {
+      &:not(:first-child) {
+        margin-top: 3rem;
+      }
+    }
+  }
+}

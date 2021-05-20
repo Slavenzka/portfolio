@@ -1,0 +1,36 @@
+@import "../variables";
+
+@keyframes rotatePreloader {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-left: var(--padding-global-l);
+
+  &__img {
+    width: 15rem;
+    animation-name: rotatePreloader;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+  }
+}
+
+@media (max-width: $adaptiveMax) {
+  .preloader {
+    &__img {
+      width: 10rem;
+    }
+  }
+}

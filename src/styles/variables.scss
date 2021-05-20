@@ -1,0 +1,17 @@
+$colorLightest: rgb(255, 255, 255);
+$colorLightestOpacity: rgba(255, 255, 255, 0.5);
+$colorMain: rgb(243, 255, 185);
+$colorDarkest: rgb(0, 34, 34);
+
+$transitionDuration: 0.3s;
+$adaptiveMax: 1260px;
+$mobileMax: 767px;
+
+body {
+  --padding-global-l: 200px;
+
+  @media (max-width: $adaptiveMax) {
+    --padding-global-l: 0;
+    --padding-h: 2rem;
+  }
+}

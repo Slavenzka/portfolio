@@ -1,0 +1,94 @@
+@import "../mixins";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 10%;
+  padding-left: calc(var(--padding-global-l) + 15%);
+  min-height: 100vh;
+  color: white;
+
+  &__heading {
+    @include h1;
+
+    margin: 0;
+  }
+
+  &__surname {
+    color: $colorMain;
+  }
+
+  &__address {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-style: normal;
+  }
+
+  &__city {
+    @include highlight($colorLightestOpacity);
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -0.3rem;
+      right: -1.5rem;
+      width: 1px;
+      height: 3rem;
+      background-color: $colorMain;
+    }
+  }
+
+  &__email {
+    @include highlight($colorMain, 100);
+    @include link;
+
+    margin-left: 3rem;
+  }
+
+  &__wyziwig {
+    @include regular;
+
+    margin-top: 2rem;
+  }
+
+  &__list {
+    @include resetList;
+
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__link {
+    font-size: 0;
+
+    &:hover {
+      .about__icon {
+        fill: $colorMain;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__icon {
+    fill: $colorLightest;
+    opacity: 0.5;
+    transition-duration: $transitionDuration;
+  }
+}
+
+@media (max-width: $adaptiveMax) {
+  .about {
+    padding: 0 var(--padding-h);
+  }
+}
