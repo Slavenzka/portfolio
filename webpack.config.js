@@ -12,7 +12,7 @@ module.exports = {
     path: path.join(__dirname, `public`),
     publicPath: '/'
   },
-  devtool: `source-map`,
+  devtool: 'source-map',
   devServer: {
     contentBase: path.join(__dirname, `public`),
     watchContentBase: true,
@@ -60,6 +60,16 @@ module.exports = {
           name: '[name].[ext]',
           outputPath: 'assets/images/',
           publicPath: url => '../assets/images/' + url
+        }
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            plugins: ['@babel/plugin-proposal-optional-chaining', '@babel/plugin-proposal-nullish-coalescing-operator']
+          }
         }
       }
     ],

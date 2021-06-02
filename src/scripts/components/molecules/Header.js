@@ -32,7 +32,7 @@ const createHeaderTemplate = (routes, location) => {
       >
         Бургер для управления мобильным меню
       </button>
-      <nav class="container header__container">
+      <nav class="header__container">
         <ul class="header__list" data-nav>
           ${ createRouteItems() }
         </ul>

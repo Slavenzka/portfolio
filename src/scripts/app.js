@@ -1,8 +1,8 @@
-import Header from './components/molecules/Header'
-import { render } from '../utils/common'
-import Router from './Router'
-import { RenderPosition } from '../utils/const'
-import SiteGrid from './components/templates/SiteGrid'
+import Header from './components/molecules/Header';
+import { render } from '../utils/common';
+import Router from './Router';
+import { RenderPosition } from '../utils/const';
+import SiteGrid from './components/templates/SiteGrid';
 
 const entryPoint = document.querySelector('#root');
 

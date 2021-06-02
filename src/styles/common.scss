@@ -27,12 +27,41 @@ a {
   padding-left: var(--padding-global-l);
 }
 
+.container {
+  padding: 0 10rem;
+}
+
 .content {
   min-height: 100vh;
 }
 
 .preloaderPage {
   height: calc(100vh - var(--padding-global-v) - 2rem);
+}
+
+.modules {
+  position: relative;
+  display: inline-block;
+  padding-top: 3rem;
+  color: white;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: -0.5rem;
+    width: 4.6rem;
+    height: 4.6rem;
+    border: 1px solid white;
+    opacity: 0.5;
+  }
+}
+
+.fullImage {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: cover;
 }
 
 @media (max-width: $adaptiveMax) {
@@ -42,6 +71,10 @@ a {
 
   .content {
     padding: var(--padding-global-v) 0 2rem 0;
+  }
+
+  .container {
+    padding: 0 2rem;
   }
 }
 
