@@ -7,8 +7,8 @@ export default class HomeController {
     this._model = model;
   }
 
-  // p5.js wrecks mobile browsers performance
   _renderAnimatedBackground () {
+    // p5.js wrecks mobile browsers performance
     if (!window.matchMedia(`(max-width: 1260px)`).matches) {
       window.VANTA.TOPOLOGY({
         el: ".about",

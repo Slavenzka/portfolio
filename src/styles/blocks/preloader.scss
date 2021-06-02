@@ -18,7 +18,8 @@
   padding-left: var(--padding-global-l);
 
   &__img {
-    width: 15rem;
+    fill: white;
+    width: 10rem;
     animation-name: rotatePreloader;
     animation-duration: 5s;
     animation-iteration-count: infinite;

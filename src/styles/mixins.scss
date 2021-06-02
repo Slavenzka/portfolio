@@ -9,10 +9,42 @@
   color: $color;
 }
 
+@mixin h2 ($color: $colorLightest) {
+  font-family: "Igra", "Arial", sans-serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: $color;
+}
+
+@mixin h3 ($color: $colorLightest) {
+  font-family: "Igra", "Arial", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: $color;
+}
+
 @mixin highlight ($color: $colorLightest, $weight: 600) {
   font-family: "SFPro", Arial, sans-serif;
   font-size: 2.2rem;
   font-weight: $weight;
+  line-height: 1.15;
+  color: $color;
+}
+
+@mixin regular ($color: $colorLightest) {
+  font-family: "SFPro", Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.3;
+  color: $color;
+}
+
+@mixin fontCode ($color: $colorLightest) {
+  font-family: "Courier New", Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
   line-height: 1.15;
   color: $color;
 }
@@ -26,11 +58,11 @@
   color: $color;
 }
 
-@mixin regular ($color: $colorLightest) {
-  font-family: "SFPro", Arial, sans-serif;
-  font-size: 1.8rem;
-  font-weight: 300;
-  line-height: 1.3;
+@mixin fontLabel ($color: $colorMain) {
+  font-family: "Courier New", Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.15;
   color: $color;
 }
 
@@ -52,12 +84,17 @@
 // Style mixins
 @mixin link {
   transition-duration: $transitionDuration;
+  transition-property: color, opacity;
 
   &:hover {
     text-decoration: underline;
   }
 
   &:focus {
-    outline: 2px solid $colorMain;
+    outline: 2px dashed $colorMain;
+  }
+
+  &:active {
+    outline: none;
   }
 }

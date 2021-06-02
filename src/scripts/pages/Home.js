@@ -1,8 +1,8 @@
-import HomeController from '../controllers/Home'
-import Preloader from '../components/atoms/Preloader'
-import provider from '../components/api/Provider'
-import aboutModel from '../models/aboutModel'
-import { render } from '../../utils/common'
+import HomeController from '../controllers/Home';
+import Preloader from '../components/atoms/Preloader';
+import provider from '../components/api/Provider';
+import aboutModel from '../models/aboutModel';
+import { render } from '../../utils/common';
 
 export default class Home {
   constructor (container) {

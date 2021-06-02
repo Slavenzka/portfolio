@@ -1,0 +1,153 @@
+@import "../mixins";
+@import "../variables";
+
+.preview {
+  --gap-size: 4rem;
+  display: grid;
+  grid-template-columns: 40% var(--gap-size) 1fr;
+  text-align: right;
+
+  &__button {
+    @include resetButton;
+
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    position: relative;
+    margin: 2rem 0 0 0;
+    max-height: 25rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: $colorDarkTransparent;
+      transition-duration: $transitionDuration;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__info {
+    grid-row: 1 / 2;
+    grid-column: 2 / -1;
+    pointer-events: none;
+  }
+
+  &__type {
+    @include fontLabel;
+
+    position: relative;
+    padding-left: var(--gap-size);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.7rem;
+      right: calc(100% - var(--gap-size) / 1.5);
+      width: 35rem;
+      height: 1px;
+      background: linear-gradient(to left, $colorMain, transparent);
+    }
+  }
+
+  &__heading {
+    @include h3;
+
+    margin: 0;
+    padding-left: var(--gap-size);
+  }
+
+  &__description {
+    @include regular;
+
+    position: relative;
+    margin: 4rem 0 0 0;
+    padding: 2rem;
+    background-color: $colorDark;
+    z-index: 2;
+  }
+
+  &__list {
+    @include resetList;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2rem;
+    padding-left: var(--gap-size);
+  }
+
+  &__item {
+    @include fontCode;
+
+    &:not(:first-child) {
+      margin-left: 2rem;
+    }
+  }
+}
+
+[data-preview-odd] {
+  grid-template-columns: 1fr var(--gap-size) 40%;
+
+  .preview__button {
+    grid-column: 2 / -1;
+  }
+
+  .preview__info {
+    grid-column: 1 / 3;
+    text-align: left;
+  }
+
+  .preview__type,
+  .preview__heading,
+  .preview__list {
+    padding-left: 0;
+    padding-right: var(--gap-size);
+  }
+
+  .preview__type {
+    &::before {
+      left: calc(100% - var(--gap-size) / 1.5);
+      background: linear-gradient(to right, $colorMain, transparent);
+    }
+  }
+
+  .preview__list {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: $mobileMax) {
+  .preview {
+    display: flex;
+    flex-direction: column;
+
+    &__button {
+      order: 2;
+      height: 25rem;
+    }
+
+    &__info {
+      order: 1;
+    }
+
+    &__type {
+      &::before {
+        width: 25rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import "../variables";
+@import "../mixins";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $colorDarkTransparent;
+  z-index: 3;
+
+  &__btn {
+    @include resetButton;
+
+    position: absolute;
+    top: -5rem;
+    right: 0;
+    padding: 1rem;
+    width: 4rem;
+    height: 4rem;
+    font-size: 0;
+    z-index: 1;
+    background-color: $colorDark;
+
+    &:hover {
+      .modal__icon {
+        fill: $colorMain;
+      }
+    }
+
+    &:focus {
+      outline: 2px dashed $colorMain;
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    fill: $colorLightest;
+    transition-duration: $transitionDuration;
+  }
+
+  &__content {
+    position: relative;
+  }
+}

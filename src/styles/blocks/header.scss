@@ -14,9 +14,9 @@
 
   &__container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem;
   }
 
   &__list {
@@ -25,7 +25,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: auto;
   }
 
   &__item {
@@ -39,12 +38,21 @@
     @include navigation($colorLightest);
 
     transition-duration: $transitionDuration;
+    transition-property: opacity, color;
     opacity: 0.5;
     cursor: pointer;
 
     &:hover {
       color: $colorMain;
       opacity: 1;
+    }
+
+    &:focus {
+      outline: 2px dashed $colorMain;
+    }
+
+    &:active {
+      outline: none;
     }
 
     &--active {
@@ -62,9 +70,10 @@
   .header {
     align-items: flex-end;
     padding: 3rem var(--padding-h);
-    width: 100%;
+    width: 100vw;
     min-height: auto;
     background-color: transparent;
+    z-index: 3;
 
     &__burger {
       @include resetButton;
